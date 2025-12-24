@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="	UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ujian Genap</title>
+</head>
+<html>
+<body>
+
+<script> 
+ // === TRANSAKSI 1 === ///
+ let jenis1 = prompt("Transaksi 1 - Jenis baju");
+ let harga1 = parseInt(prompt("Transaksi 1 - Harga satuan"));
+ let jumlah1 = parseInt(prompt("Transaksi 1 - Jumlah beli"));
+ let sesi1 = prompt("Transaksi 1 - Sesi (pagi/siang/malam)");
+
+ let total1 = harga1 * jumlah1;
+ let diskon1 = 0;
+ 
+ if (sesi1 == "pagi") {
+
+  if (jumlah1 <= 10) {
+    diskon1 = 0;
+  } else if (jumlah1 <= 20) {
+    diskon1 = (10 * harga1 * 0.05) +
+              ((jumlah1 - 10) * harga1 * 0.10);
+  } else {
+    diskon1 = (10 * harga1 * 0.07) +
+              (10 * harga1 * 0.15) +
+              ((jumlah1 - 20) * harga1 * 0.25);
+  }
+
+} else if (sesi1 == "siang") {
+  diskon1 = 0;
+
+} else if (sesi1 == "malam") {
+
+  if (jumlah1 <= 10) {
+    diskon1 = 0;
+  } else if (jumlah1 <= 20) {
+    diskon1 = (10 * harga1 * 0.05) +
+              ((jumlah1 - 10) * harga1 * 0.18);
+  } else {
+    diskon1 = (10 * harga1 * 0.07) +
+              (10 * harga1 * 0.18) +
+              ((jumlah1 - 20) * harga1 * 0.25);
+  }
+}
+
+ let pendapatan1 = total1 - diskon1;
+
+// ==== TRANSAKSI 2 ==== //
+ let jenis2 = prompt("Transaksi 2 - Jenis baju");
+ let harga2 = parseInt(prompt("Transaksi 2 - Harga satuan"));
+ let jumlah2 = parseInt(prompt("Transaksi 2 - Jumlah beli"));
+ let sesi2 = prompt("Transaksi 2 - Sesi (pagi/siang/malam)");
+
+ let total2 = harga2 * jumlah2;
+ let diskon2 = 0;
+
+  if (sesi2 == "pagi") {
+
+  if (jumlah2 <= 10) {
+    diskon2 = 0;
+  } else if (jumlah2 <= 25) {
+    diskon2 = (10 * harga2 * 0.10) +
+              ((jumlah2 - 10) * harga2 * 0.10);
+  } else {
+    diskon2 = (10 * harga2 * 0.10) +
+              (10 * harga2 * 0.25) +
+              ((jumlah2 - 25) * harga2 * 0.30);
+  }
+
+} else if (sesi2 == "siang") {
+  diskon2 = 0;
+
+  } else if (sesi2 == "malam") {
+
+  if (jumlah2 > 20) {
+    diskon2 = total2 * 0.25;
+  } else {
+    diskon2 = 0;
+  }
+}
+
+ let pendapatan2 = total2 - diskon2;
+
+ let totalTransaksi = 2;
+ let totalDiskon = diskon1 + diskon2;
+ let totalPendapatan = pendapatan1 + pendapatan2;
+ let rataRataPendapatan = totalPendapatan / totalTransaksi;
+
+console.log("=== Transaksi ke-1 ===");
+console.log("Jenis baju:", jenis1);
+console.log("Harga satuan:", harga1);
+console.log("Jumlah baju yang di beli:", jumlah1);
+console.log("Pagi / Siang / Malam:", sesi1);
+console.log("Jenis Baju		:", jenis1);
+console.log("Sesi 			:", sesi1);
+console.log("Total Harga 	: Rp", total1);
+console.log("Diskon 			: Rp", diskon1);
+console.log("Total Bayar 	: Rp", total1);
+
+console.log("=== Transaksi ke-2 ===");
+console.log("Jenis baju:", jenis2);
+console.log("Harga satuan:", harga2);
+console.log("Jumlah baju yang di beli:", jumlah2);
+console.log("Pagi / Siang / Malam:", sesi2);
+console.log("Jenis Baju		:", jenis2);
+console.log("Sesi 			:", sesi2);
+console.log("Total Harga 	: Rp", total2);
+console.log("Diskon 			: Rp", diskon2);
+console.log("Total Bayar 	: Rp", total2);
+
+console.log("=== REKAP AKHIR PENJUALAN ===");
+console.log("Total Transaksi     :", totalTransaksi);
+console.log("Total Diskon        : Rp", totalDiskon);
+console.log("Total Pendapatan    : Rp", totalPendapatan);
+console.log("Rata-rata Pendapatan: Rp", rataRataPendapatan);
+
+</script>
+</body>
+</html> 
